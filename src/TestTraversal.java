@@ -42,10 +42,12 @@ public class TestTraversal {
         System.out.println();
 
         myBT = new Traversals<>();
-        myResult = myBT.postorder(rooty);
+        myResult = myBT.postorder(null);
         System.out.print("Post-order: ");
-        for (Integer result : myResult)
-            System.out.print(result + ", ");
-        System.out.println();
+        if (myResult != null) {
+            for (Integer result : myResult)
+                System.out.print(result + ", ");
+            System.out.println();
+        }
     }
 }

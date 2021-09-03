@@ -28,6 +28,9 @@ public class Traversals<T extends Comparable<? super T>> {
     public List<T> preorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         List<T> returnVals = new ArrayList<T>();
+        if (root == null){
+            return null;
+        }
         if (baseCase(root) == true){
             returnVals.add(root.getData());
         }
@@ -57,6 +60,9 @@ public class Traversals<T extends Comparable<? super T>> {
     public List<T> inorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         List<T> returnVals = new ArrayList<T>();
+        if (root == null){
+            return null;
+        }
         if (baseCase(root) == true){
             returnVals.add(root.getData());
         }
@@ -86,6 +92,9 @@ public class Traversals<T extends Comparable<? super T>> {
     public List<T> postorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         List<T> returnVals = new ArrayList<T>();
+        if (root == null){
+            return null;
+        }
         if (baseCase(root) == true){
             returnVals.add(root.getData());
         }
