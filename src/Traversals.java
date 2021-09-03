@@ -27,6 +27,18 @@ public class Traversals<T extends Comparable<? super T>> {
      */
     public List<T> preorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        List<T> returnVals = new ArrayList<T>();
+        if (baseCase(root) == true){
+            returnVals.add(root.getData());
+        }
+        else {
+            List<T> leftVals = preorder(root.getLeft());
+            List<T> rightVals = preorder(root.getRight());
+            returnVals.add(root.getData());
+            returnVals.addAll(leftVals);
+            returnVals.addAll(rightVals);
+        }
+        return returnVals;
     }
 
     /**
@@ -44,6 +56,18 @@ public class Traversals<T extends Comparable<? super T>> {
      */
     public List<T> inorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        List<T> returnVals = new ArrayList<T>();
+        if (baseCase(root) == true){
+            returnVals.add(root.getData());
+        }
+        else {
+            List<T> leftVals = inorder(root.getLeft());
+            List<T> rightVals = inorder(root.getRight());
+            returnVals.addAll(leftVals);
+            returnVals.add(root.getData());
+            returnVals.addAll(rightVals);
+        }
+        return returnVals;
     }
 
     /**
@@ -61,5 +85,22 @@ public class Traversals<T extends Comparable<? super T>> {
      */
     public List<T> postorder(TreeNode<T> root) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        List<T> returnVals = new ArrayList<T>();
+        if (baseCase(root) == true){
+            returnVals.add(root.getData());
+        }
+        else {
+            List<T> leftVals = postorder(root.getLeft());
+            List<T> rightVals = postorder(root.getRight());
+            returnVals.addAll(leftVals);
+            returnVals.addAll(rightVals);
+            returnVals.add(root.getData());
+        }
+        return returnVals;
+    }
+    private boolean baseCase(TreeNode<T> root){
+        if (root.getLeft() == null && root.getRight() == null)
+            return true;
+        return false;
     }
 }
